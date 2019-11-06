@@ -1,11 +1,11 @@
-#myrandom
+# myrandom
 
 using 1/1000 us accuracy time now as srand's param to produce a better random int or strings.
 
 
-#you may see some bad example for using random like this:
+# you may see some bad example for using random like this:
 
-###the first bad example
+### the first bad example
 
 ```
 srand(time(NULL));//通过时间函数设置随机数种子，使得每次运行结果随机。return in seconds,not good,disaster
@@ -57,7 +57,7 @@ xkfejldmfy
 ```
 this is because time(NULL) will give you a time now accuracy to seconds.and every time the rand runs it will call time(NULL) again to get random seed,but it runs too fast it finished in 1s so the random seed always the same.
 
-###the second bad example
+### the second bad example
 
 ```
 srand(clock());//clock will return the current clock in ms;not good;
@@ -112,7 +112,7 @@ this is because clock() will give you a time now accuracy to ms.and the program 
 
 ---
 
-###So we need a better srand seed,which is what we do here by using time now in  1/1000 us accuracy
+### So we need a better srand seed,which is what we do here by using time now in  1/1000 us accuracy
 
 srand() actually takes the pointer to the param you provide.and it will affect the rand,if you using srand(&something) before,then every time you using rand() would just like you using rand(&something).no matter something is a basetype or a funtion.
 
@@ -233,4 +233,5 @@ azlrbbdzwy
 ```
 
 
-But it should be still not enough to be a standard prng.remember to using it only in your home.
+But it should be still not enough to be a standard prng.
+Remember to using it only in your home.
