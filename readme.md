@@ -55,7 +55,7 @@ xkfejldmfy
 xkfejldmfy
 xkfejldmfy
 ```
-this is because time(NULL) will give you a time now accuracy to seconds.and every time the rand runs it will call time(NULL) again to get random seed,but it runs too fast it finished in 1s so the random seed always the same.
+this is because time(NULL) will give you a time now accuracy to seconds.and every time the rand runs it will call time(NULL) again to get random seed,but it runs too fast it finished in 1s so the random seed always the same so the random int it produced was the same and the strings too.
 
 ### the second bad example
 
